@@ -6,7 +6,7 @@ const inputBet = document.querySelector('.js_input-bet');
 const playButton = document.querySelector('.js_input-btn');
 const message = document.querySelector('.js_message');
 const moneyBalance = document.querySelector('.js_balance');
-const startMoney = 50; 
+let startMoney = 50; 
 
 //funcion numero aleatorio 
 function getRandomNumber(max) {
@@ -23,24 +23,8 @@ function resultMessage(randomNumber) {
     console.log(randomNumber); 
     
 }
-//funcion saldo NO FUNCIONA 
-/*function balance(randomNumber) {
-    const result1 = startMoney * 2; 
-    const result2 = startMoney - inputBet.value; 
-    const result3 = startMoney - 50; 
-    const result4 = startMoney + 150; 
-   if (parseInt(selectNumber.value) === randomNumber) {
-        moneyBalance.innerHTML = `Saldo: ${result1}`; 
-    } else if {
-        moneyBalance.innerHTML = `Saldo: ${result2}`; 
-    } else if {
-        moneyBalance.innerHTML = `Saldo: ${result3}`; 
-    } else if {
-        moneyBalance.innerHTML = `Saldo: ${result4}`;
-    }
-}*/
 
-function handleClickBtn(){
+function handleClickBtn(event){
     event.preventDefault(); 
     const randomNumber = getRandomNumber(6);
     resultMessage(randomNumber); 
