@@ -24,21 +24,8 @@ function resultMessage(randomNumber) {
     
 }
 //funcion saldo NO FUNCIONA 
-/*function balance(randomNumber) {
-    const result1 = startMoney * 2; 
-    const result2 = startMoney - inputBet.value; 
-    const result3 = startMoney - 50; 
-    const result4 = startMoney + 150; 
-   if (parseInt(selectNumber.value) === randomNumber) {
-        moneyBalance.innerHTML = `Saldo: ${result1}`; 
-    } else if {
-        moneyBalance.innerHTML = `Saldo: ${result2}`; 
-    } else if {
-        moneyBalance.innerHTML = `Saldo: ${result3}`; 
-    } else if {
-        moneyBalance.innerHTML = `Saldo: ${result4}`;
-    }
-}*/
+function balance() {}
+ 
 
 function handleClickBtn(){
     event.preventDefault(); 
