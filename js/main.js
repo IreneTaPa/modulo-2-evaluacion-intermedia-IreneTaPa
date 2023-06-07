@@ -1,50 +1,52 @@
-'use strict'; 
+'use strict';
 
-//QUERYES 
 const selectNumber = document.querySelector('.js_select');
 const userBetInput = document.querySelector('.js_input-bet');
 const playButton = document.querySelector('.js_input-btn');
 const messageElement = document.querySelector('.js_message');
 const moneyBalance = document.querySelector('.js_balance');
 const userBalanceSpan = document.querySelector('.js_balanceSpan');
-//VARIBALES GLOBALES 
-let startMoney = 50; //let porque el balance irá cambiando
 
-//funcion numero aleatorio 
+let startMoney = 50;
+
 function getRandomNumber(max) {
-    return Math.ceil(Math.random()*max);     
+  return Math.ceil(Math.random() * max);
 }
-//funcion has ganado saldo  
+
 function increseBalance() {
-    const bet = parseInt(userBetInput.value); 
-    startMoney = startMoney + (bet*2); 
-    userBalanceSpan.innerHTML = startMoney;    
+  const bet = parseInt(userBetInput.value);
+  startMoney = startMoney + bet * 2;
+  userBalanceSpan.innerHTML = startMoney;
 }
 
-//funcion has perdido saldo
 function decreaseBalance() {
- const bet = parseInt(userBetInput.value); 
-    startMoney = startMoney - bet; 
-    userBalanceSpan.innerHTML = startMoney;
+  const bet = parseInt(userBetInput.value);
+  startMoney = startMoney - bet;
+  userBalanceSpan.innerHTML = startMoney;
 }
 
-//funcion mensaje / parseInt para convertir el "texto" en numero y así si acertamos el mensaje nos dará que hemos ganado 
+function updateMessage(message) {
+  messageElement.innerHTML = message;
+}
+
 function resultMessage(randomNumber) {
-    if (parseInt(selectNumber.value) === randomNumber) {
-        messageElement.innerHTML = `Has ganado el doble de lo apostado :)`
-        increseBalance(); //funcion has ganado saldo 
-    } else {
-        messageElement.innerHTML = 'Has perdido lo apostado :('
-        decreaseBalance(); //funcion has perdido saldo
-    }
-    console.log(randomNumber);     
+  console.log(randomNumber);
+  let select = selectNumber.selectedIndex;
+  if (select == null || select == 0) {
+    updateMessage('Debes seleccionar un numero del 1 al 6 para poder apostar');
+  } else if (parseInt(selectNumber.value) === randomNumber) {
+    updateMessage('Has ganado el doble de lo apostado :)');
+    increseBalance();
+  } else {
+    updateMessage('Has perdido lo apostado :(');
+    decreaseBalance();
+  }
 }
 
-//funcion manejadora (jefa)
-function handleClickBtn(event){
-    event.preventDefault(); 
-    const randomNumber = getRandomNumber(6);
-    resultMessage(randomNumber); // se trae la función del numero aleatorio y de la variable increaseBalance o decreaseBalance (dependiendo de si ganamos saldo o no)
+function handleClickBtn(event) {
+  event.preventDefault();
+  const randomNumber = getRandomNumber(6);
+  resultMessage(randomNumber);
 }
-//evento click sobre playButton
-playButton.addEventListener('click', handleClickBtn); 
+
+playButton.addEventListener('click', handleClickBtn);
