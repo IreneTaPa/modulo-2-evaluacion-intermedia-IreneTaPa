@@ -8,28 +8,29 @@
       content="width=device-width, initial-scale=1.0"
     />
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <title>Dados y Apuestas:</title>
   </head>
   <body>
-    <div>
-      <h1>Dados y Apuestas</h1>
-      <h3>Introduce aquí tu jugada:</h2>
-      <form action="">
-          <select name="form" class="js_select" required="required" >
-            <option value="" hidden selected>Que numero apuestas del 1 al 6</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-          </select>
-          <input class="js_input-bet" type="text" placeholder="¿Cuánto apuestas?"/>
-          <input class="js_input-btn" type="submit" value="Jugar">
-      </form>
-      <h2 class="js_message">¡Vamos a Jugar!</h2>
-      <p class="js_balance">Saldo: <span class="js_balanceSpan">50€</span></p>
-    </div>
+    <div class="section">
+        <h1 class="text">🎲Dados y Apuestas🎰</h1>
+        <h3 class="text">Introduce aquí tu jugada:</h2>
+        <form action="">
+            <select name="form" class="select js_select" required="required" >
+              <option value="" hidden selected>Que numero apuestas del 1 al 6</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+            <input class="input js_input-bet" type="text" placeholder="¿Cuánto apuestas?"/>
+            <input class="btn js_input-btn" type="submit" value="Jugar">
+        </form>
+        <h2 class="text js_message">¡Vamos a Jugar!</h2>
+        <p class="text js_balance">Saldo: <span class="js_balanceSpan">50€🪙</span></p>
+            </div>
+    
     <script src="./js/main.js"></script>
   </body>
 </html>

@@ -16,13 +16,13 @@ function getRandomNumber(max) {
 function increseBalance() {
   const bet = parseInt(userBetInput.value);
   startMoney = startMoney + bet * 2;
-  userBalanceSpan.innerHTML = startMoney;
+  userBalanceSpan.innerHTML = `${startMoney}€ 🪙 `;
 }
 
 function decreaseBalance() {
   const bet = parseInt(userBetInput.value);
   startMoney = startMoney - bet;
-  userBalanceSpan.innerHTML = startMoney;
+  userBalanceSpan.innerHTML = `${startMoney}€ 🪙`;
 }
 
 function updateMessage(message) {

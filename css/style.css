@@ -1,0 +1,28 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-around;
+    border: 3px dotted red;
+    background-color: rgb(68, 165, 68);
+    margin: 0 200px 0 200px; 
+    color: rgb(172, 43, 43); 
+}
+.select {
+    border-radius: 5px;
+    height: 25px;
+}
+
+.btn {
+    color: white;
+    background-color: rgb(248, 192, 48);
+    border: 2px solid rgb(248, 192, 48);
+    box-shadow: 0 2px 5px 1px rgb(143, 115, 55) ;
+    border-radius: 5px;
+    margin-left: 10px;
+    height: 40px;
+    width: 60px;
+}
+
